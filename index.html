@@ -347,30 +347,14 @@
 
       
         
-          
-            <!-- WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。more -->
-<pre><code>[xdebug]
-zend_extension=&quot;/usr/local/opt/php56-xdebug/xdebug.so&quot;
-xdebug.remote_autostart=1
-xdebug.remote_enable=1
-xdebug.remote_mode=&quot;req&quot;
-xdebug.remote_log=&quot;/var/log/xdebug.log&quot;
-xdebug.remote_host=192.168.3.27
-xdebug.remote_port=9001
-xdebug.remote_handler=&quot;dbgp&quot;
-xdebug.idekey=&quot;PHPSTORM&quot; 
-
-$token = str_replace(&quot; &quot;, &quot;+&quot;, $token);
-    $auto_token = auth_code($token, $operation = &apos;DECODE&apos;);
-    $jz_token = unserialize($auto_token);
-    if($uid &amp;&amp; $uid != $jz_token[&apos;uid&apos;]){
-        error_response(array(
-            &quot;code&quot; =&gt; 0,
-            &quot;msg&quot;  =&gt; &quot;用户未登录或登录信息出错，请退出重新登录&quot;
-        ));
-    }
-</code></pre>
-          
+          <p>WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/06/my-new-Post/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
