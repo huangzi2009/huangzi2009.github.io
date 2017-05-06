@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="xdebug," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,17 +90,12 @@
 
 
 
-<meta name="description" content="# WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。 [xdebug] zend_extension=&amp;quot;/usr/local/opt/php56-xdebug/xdebug.so&amp;quot; xdebug.remote_autostart=1 xdebug.remote_enable=1 xdebug.remo">
-<meta name="keywords" content="xdebug">
-<meta property="og:type" content="article">
-<meta property="og:title" content="phpstorm+xdebug无法访问进入断点的坑">
-<meta property="og:url" content="http://yoursite.com/2017/05/06/my-new-Post/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/xdebug/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="# WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。 [xdebug] zend_extension=&amp;quot;/usr/local/opt/php56-xdebug/xdebug.so&amp;quot; xdebug.remote_autostart=1 xdebug.remote_enable=1 xdebug.remo">
-<meta property="og:updated_time" content="2017-05-06T15:08:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="phpstorm+xdebug无法访问进入断点的坑">
-<meta name="twitter:description" content="# WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。 [xdebug] zend_extension=&amp;quot;/usr/local/opt/php56-xdebug/xdebug.so&amp;quot; xdebug.remote_autostart=1 xdebug.remote_enable=1 xdebug.remo">
+<meta name="twitter:title" content="Hexo">
 
 
 
@@ -128,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/06/my-new-Post/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/xdebug/"/>
 
 
 
 
 
-  <title>phpstorm+xdebug无法访问进入断点的坑 | Hexo</title>
+  <title>标签: xdebug | Hexo</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -159,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,169 +268,44 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/my-new-Post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h1>xdebug<small>标签</small>
+      </h1>
+    </div>
 
     
-      <header class="post-header">
+      
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">phpstorm+xdebug无法访问进入断点的坑</h1>
-        
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/05/06/my-new-Post/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">phpstorm+xdebug无法访问进入断点的坑</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T16:04:24+08:00">
-                2017-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>#</p>
-<p>WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。</p>
-<pre><code>[xdebug]
-zend_extension=&quot;/usr/local/opt/php56-xdebug/xdebug.so&quot;
-xdebug.remote_autostart=1
-xdebug.remote_enable=1
-xdebug.remote_mode=&quot;req&quot;
-xdebug.remote_log=&quot;/var/log/xdebug.log&quot;
-xdebug.remote_host=192.168.3.27
-xdebug.remote_port=9001
-xdebug.remote_handler=&quot;dbgp&quot;
-xdebug.idekey=&quot;PHPSTORM&quot; 
-
-$token = str_replace(&quot; &quot;, &quot;+&quot;, $token);
-    $auto_token = auth_code($token, $operation = &apos;DECODE&apos;);
-    $jz_token = unserialize($auto_token);
-    if($uid &amp;&amp; $uid != $jz_token[&apos;uid&apos;]){
-        error_response(array(
-            &quot;code&quot; =&gt; 0,
-            &quot;msg&quot;  =&gt; &quot;用户未登录或登录信息出错，请退出重新登录&quot;
-        ));
-    }
-</code></pre>
-      
-    </div>
-
-    <div>
-      
+            </a>
         
+      </h2>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-05-06T16:04:24+08:00"
+              content="2017-05-06" >
+          05-06
+        </time>
+      </div>
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/xdebug/" rel="tag"># xdebug</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/05/06/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -443,10 +313,6 @@ $token = str_replace(&quot; &quot;, &quot;+&quot;, $token);
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -633,10 +499,6 @@ $token = str_replace(&quot; &quot;, &quot;+&quot;, $token);
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
 
   
 
