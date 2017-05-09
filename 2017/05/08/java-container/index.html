@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="写的比较的文章： 1、轻松理解Java Spring 核心功能之一: 控制反转容器(IoC Container) 2、轻松理解 Java开发中的依赖注入(DI)和控制反转(IOC) 容器的作用： 因为这里只有三个零件,创建和组装都没有问题. 如有一个设备由1000个零件,创建和组装过程就很繁琐. 试想,我们网购了一辆山地自行车,要把它装配起来,我们首先会看货品清单和装配说明书. Spring 容器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/05/06/hello-world/index.html">
+<meta property="og:title" content="java容器、控制反转、依赖注入等概念解析">
+<meta property="og:url" content="http://yoursite.com/2017/05/08/java-container/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-05-06T06:00:11.000Z">
+<meta property="og:description" content="写的比较的文章： 1、轻松理解Java Spring 核心功能之一: 控制反转容器(IoC Container) 2、轻松理解 Java开发中的依赖注入(DI)和控制反转(IOC) 容器的作用： 因为这里只有三个零件,创建和组装都没有问题. 如有一个设备由1000个零件,创建和组装过程就很繁琐. 试想,我们网购了一辆山地自行车,要把它装配起来,我们首先会看货品清单和装配说明书. Spring 容器">
+<meta property="og:updated_time" content="2017-05-09T01:27:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="java容器、控制反转、依赖注入等概念解析">
+<meta name="twitter:description" content="写的比较的文章： 1、轻松理解Java Spring 核心功能之一: 控制反转容器(IoC Container) 2、轻松理解 Java开发中的依赖注入(DI)和控制反转(IOC) 容器的作用： 因为这里只有三个零件,创建和组装都没有问题. 如有一个设备由1000个零件,创建和组装过程就很繁琐. 试想,我们网购了一辆山地自行车,要把它装配起来,我们首先会看货品清单和装配说明书. Spring 容器">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/06/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/08/java-container/"/>
 
 
 
 
 
-  <title>Hello World | Hexo</title>
+  <title>java容器、控制反转、依赖注入等概念解析 | Hexo</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +282,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/java-container/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -299,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">java容器、控制反转、依赖注入等概念解析</h1>
         
 
         <div class="post-meta">
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T14:00:11+08:00">
-                2017-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T23:49:08+08:00">
+                2017-05-08
               </time>
             
 
@@ -346,15 +346,17 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>写的比较的文章：</p>
+<p>1、<a href="http://www.jianshu.com/p/14a8566d1f18" target="_blank" rel="external">轻松理解Java Spring 核心功能之一: 控制反转容器(IoC Container)</a></p>
+<p>2、<a href="http://www.jianshu.com/p/506dcd94d4f9" target="_blank" rel="external">轻松理解 Java开发中的依赖注入(DI)和控制反转(IOC)</a></p>
+<p>容器的作用：</p>
+<p>因为这里只有三个零件,创建和组装都没有问题.</p>
+<p>如有一个设备由1000个零件,创建和组装过程就很繁琐.</p>
+<p>试想,我们网购了一辆山地自行车,要把它装配起来,我们首先会看货品清单和装配说明书.</p>
+<p><strong>Spring 容器就是为创建和组装零件而设计的.</strong></p>
+<p><strong>现实生活中,装有糖果的盒子就是容器,Java里的容器和现实生活类似,只不过装的是对象实例.</strong></p>
+<p><a href="http://www.jianshu.com/p/4c9e5e592b30" target="_blank" rel="external">关于Laravel的核心分析</a></p>
+<p><a href="http://www.cnblogs.com/lyzg/p/6181055.html" target="_blank" rel="external">laravel框架容器管理的一些要点</a></p>
 
       
     </div>
@@ -391,15 +393,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/05/07/tutorial/" rel="next" title="laravel学习过程整理资料集合">
+                <i class="fa fa-chevron-left"></i> laravel学习过程整理资料集合
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/06/my-new-Post/" rel="prev" title="phpstorm+xdebug无法访问进入断点的坑">
-                phpstorm+xdebug无法访问进入断点的坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,17 +448,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -471,7 +464,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -484,7 +477,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -509,22 +502,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
