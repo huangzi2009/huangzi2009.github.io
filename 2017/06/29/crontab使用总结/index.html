@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/29/crontab使用总结/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基础知识1、首先说说cron,它是一个linux下的定时执行工具。根用户以外的用户可以使用 crontab 工具来配置 cron 任务。所有用户定义的 crontab 都被保存在/var/spool/cron目录中，并使用创建它们的用户身份来执行。 要以某用户身份创建一个 crontab 项目，登录为该用户，然后键入 crontab -e 命令来编辑该用户的 crontab。该文件使用的格式和 /">
-<meta property="og:updated_time" content="2017-06-29T09:58:12.000Z">
+<meta property="og:updated_time" content="2017-06-29T10:05:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="crontab使用总结">
 <meta name="twitter:description" content="基础知识1、首先说说cron,它是一个linux下的定时执行工具。根用户以外的用户可以使用 crontab 工具来配置 cron 任务。所有用户定义的 crontab 都被保存在/var/spool/cron目录中，并使用创建它们的用户身份来执行。 要以某用户身份创建一个 crontab 项目，登录为该用户，然后键入 crontab -e 命令来编辑该用户的 crontab。该文件使用的格式和 /">
@@ -404,6 +404,29 @@
 <p>（2）第二个例子，也就是本教程测试的例子</p>
 <p>* <em> </em> <em> </em> /usr/bin/php -f /root/test.php &gt;&gt; test.log</p>
 <p>每一分钟执行/root/test.php文件，将结果输出到test.log中。</p>
+<p>crontab文件的一些例子：</p>
+<p>30 21 <em> </em> * /usr/local/etc/rc.d/lighttpd restart</p>
+<p>上面的例子表示每晚的21:30重启apache。</p>
+<p>45 4 1,10,22 <em> </em> /usr/local/etc/rc.d/lighttpd restart</p>
+<p>上面的例子表示每月1、10、22日的4 : 45重启apache。</p>
+<p>10 1 <em> </em> 6,0 /usr/local/etc/rc.d/lighttpd restart</p>
+<p>上面的例子表示每周六、周日的1 : 10重启apache。</p>
+<p>0,30 18-23 <em> </em> * /usr/local/etc/rc.d/lighttpd restart</p>
+<p>上面的例子表示在每天18 : 00至23 : 00之间每隔30分钟重启apache。</p>
+<p>0 23 <em> </em> 6 /usr/local/etc/rc.d/lighttpd restart</p>
+<p>上面的例子表示每星期六的11 : 00 pm重启apache。</p>
+<p>* <em>/1 </em> <em> </em> /usr/local/etc/rc.d/lighttpd restart</p>
+<p>每一小时重启apache</p>
+<p>* 23-7/1 <em> </em> * /usr/local/etc/rc.d/lighttpd restart</p>
+<ul>
+<li>晚上11点到早上7点之间，每隔一小时重启apache</li>
+</ul>
+<p>0 11 4 * mon-wed /usr/local/etc/rc.d/lighttpd restart</p>
+<p>每月的4号与每周一到周三的11点重启apache</p>
+<p>0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart</p>
+<p>一月一号的4点重启apache</p>
+<p><em>/30 </em> <em> </em> * /usr/sbin/ntpdate 210.72.145.44</p>
+<p>每半小时同步一下时间</p>
 <h1 id="Linux-Crontab-设置的定时任务没有启动的排查"><a href="#Linux-Crontab-设置的定时任务没有启动的排查" class="headerlink" title="Linux Crontab 设置的定时任务没有启动的排查"></a>Linux Crontab 设置的定时任务没有启动的排查</h1><p>1、先手动执行定时任务以此来判断脚本是否有问题。</p>
 <p>2、确认服务器是否开启定时任务计划服务</p>
 <pre><code>命令：service crond status
