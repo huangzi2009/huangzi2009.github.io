@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/29/crontab使用总结/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基础知识1、首先说说cron,它是一个linux下的定时执行工具。根用户以外的用户可以使用 crontab 工具来配置 cron 任务。所有用户定义的 crontab 都被保存在/var/spool/cron目录中，并使用创建它们的用户身份来执行。 要以某用户身份创建一个 crontab 项目，登录为该用户，然后键入 crontab -e 命令来编辑该用户的 crontab。该文件使用的格式和 /">
-<meta property="og:updated_time" content="2017-06-29T09:50:29.000Z">
+<meta property="og:updated_time" content="2017-06-29T09:53:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="crontab使用总结">
 <meta name="twitter:description" content="基础知识1、首先说说cron,它是一个linux下的定时执行工具。根用户以外的用户可以使用 crontab 工具来配置 cron 任务。所有用户定义的 crontab 都被保存在/var/spool/cron目录中，并使用创建它们的用户身份来执行。 要以某用户身份创建一个 crontab 项目，登录为该用户，然后键入 crontab -e 命令来编辑该用户的 crontab。该文件使用的格式和 /">
@@ -377,9 +377,10 @@
 <p>补充说明：cron是一个常驻服务，它提供计时器的功能，让用户在特定的时间得以执行预设的指令或程序。只要用户会编辑计时器的配置文件，就可以使 用计时器的功能。其配置文件格式如下：</p>
 <font color="red">Minute Hour Day Month DayOFWeek Command</font>
 
-<p>参　　数：<br>-e 　编辑该用户的计时器设置。</p>
-<p>-l 　列出该用户的计时器设置。</p>
-<p>-r 　删除该用户的计时器设置。</p>
+<p>参　　数：(<font color="red">与上面的基础操作命令呼应起来了</font>)</p>
+<p><strong>-e 　编辑该用户的计时器设置。</strong></p>
+<p><strong>-l 　列出该用户的计时器设置。</strong></p>
+<p><strong>-r 　删除该用户的计时器设置。</strong></p>
 <p>-u&lt;用户名称&gt; 　指定要设定计时器的用户名称。</p>
 <p>crontab 格式：</p>
 <p>基本格式 :</p>
