@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/29/crontab使用总结/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基础知识1、首先说说cron,它是一个linux下的定时执行工具。根用户以外的用户可以使用 crontab 工具来配置 cron 任务。所有用户定义的 crontab 都被保存在/var/spool/cron目录中，并使用创建它们的用户身份来执行。 要以某用户身份创建一个 crontab 项目，登录为该用户，然后键入 crontab -e 命令来编辑该用户的 crontab。该文件使用的格式和 /">
-<meta property="og:updated_time" content="2017-06-29T09:37:46.000Z">
+<meta property="og:updated_time" content="2017-06-29T09:50:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="crontab使用总结">
 <meta name="twitter:description" content="基础知识1、首先说说cron,它是一个linux下的定时执行工具。根用户以外的用户可以使用 crontab 工具来配置 cron 任务。所有用户定义的 crontab 都被保存在/var/spool/cron目录中，并使用创建它们的用户身份来执行。 要以某用户身份创建一个 crontab 项目，登录为该用户，然后键入 crontab -e 命令来编辑该用户的 crontab。该文件使用的格式和 /">
@@ -403,6 +403,25 @@
 <p>（2）第二个例子，也就是本教程测试的例子</p>
 <p>* <em> </em> <em> </em> /usr/bin/php -f /root/test.php &gt;&gt; test.log</p>
 <p>每一分钟执行/root/test.php文件，将结果输出到test.log中。</p>
+<h1 id="Linux-Crontab-设置的定时任务没有启动的排查"><a href="#Linux-Crontab-设置的定时任务没有启动的排查" class="headerlink" title="Linux Crontab 设置的定时任务没有启动的排查"></a>Linux Crontab 设置的定时任务没有启动的排查</h1><p>1、先手动执行定时任务以此来判断脚本是否有问题。</p>
+<p>2、确认服务器是否开启定时任务计划服务</p>
+<pre><code>命令：service crond status
+     service crond start
+</code></pre><p>3、检查定时任务配置的语法 </p>
+<pre><code>crontab -l 
+SHELL=/bin/bash 
+0 15 * * 1-5 cd /root/ye/project/StatShareDataProject/&amp;&amp; ./start.sh 
+</code></pre><p>可直接复制cd /root/ye/project/StatShareDataProject/&amp;&amp; ./start.sh来运行，若可以正常运行再另做判断。</p>
+<p>4、 查看crontab执行记录</p>
+<p>如果出现了crontab定时任务不执行的情况，首先需要定位问题，那么就需要通过日志来确定问题所在。</p>
+<p><strong>crontab的日志位置一般位于/var/log/cron，利用下面的语句即可查看日志。</strong></p>
+<pre><code>tail -f /var/log/cron
+</code></pre><p>上面的/var/log/cron只会记录是否执行了某些计划的脚本，但是具体执行是否正确以及脚本执行过程中的一些信息Linux会通过邮件形式发送到给该用户。 </p>
+<p>对于root用户该邮件记录位于/var/spool/mail/root，通过以下命令可以查看最近的crontab执行情况。</p>
+<pre><code>tail -f /var/spool/mail/root
+</code></pre><p>mail邮件一般只会记录脚本执行成功与否，如果执行失败，无法给出进一步的错误信息，这时需要我们将语句执行的错误信息重定向至文件中，这样可以很方便的查看错误信息。下面就给出了一个简单的例子</p>
+<pre><code>0 6 * * * /root/script/ss.sh &gt;&gt; /root/for_crontab/mylog.log 2&gt;&amp;1
+</code></pre><p>上述语句表示把错误输出和标准输出都输出到mylog.log中，在执行的时候会将命令执行的相关信息记录至mylog.log文件中。</p>
 
       
     </div>
@@ -567,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#centos下crontab的安装"><span class="nav-number">2.</span> <span class="nav-text">centos下crontab的安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础操作命令"><span class="nav-number">3.</span> <span class="nav-text">基础操作命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#crontab语法讲解"><span class="nav-number">4.</span> <span class="nav-text">crontab语法讲解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#centos下crontab的安装"><span class="nav-number">2.</span> <span class="nav-text">centos下crontab的安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础操作命令"><span class="nav-number">3.</span> <span class="nav-text">基础操作命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#crontab语法讲解"><span class="nav-number">4.</span> <span class="nav-text">crontab语法讲解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-Crontab-设置的定时任务没有启动的排查"><span class="nav-number">5.</span> <span class="nav-text">Linux Crontab 设置的定时任务没有启动的排查</span></a></li></ol></div>
             
 
           </div>
