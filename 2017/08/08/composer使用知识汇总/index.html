@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="xdebug," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -90,17 +90,16 @@
 
 
 
-<meta name="description" content="WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。">
-<meta name="keywords" content="xdebug">
+<meta name="description" content="composer的几个常用命令1、composer install 2、composer require 3、composer update 4、composer remove  5、composer dump-autoload 非常实用，每次执行该命令都会重新生成autoload_classmap文件。如果需要在laravel中新增库，将新增的库所在目录写到composer.json的autol">
 <meta property="og:type" content="article">
-<meta property="og:title" content="phpstorm+xdebug无法访问进入断点的坑">
-<meta property="og:url" content="http://yoursite.com/2017/05/06/my-new-Post/index.html">
+<meta property="og:title" content="composer使用知识汇总">
+<meta property="og:url" content="http://yoursite.com/2017/08/08/composer使用知识汇总/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。">
-<meta property="og:updated_time" content="2017-05-06T15:57:00.000Z">
+<meta property="og:description" content="composer的几个常用命令1、composer install 2、composer require 3、composer update 4、composer remove  5、composer dump-autoload 非常实用，每次执行该命令都会重新生成autoload_classmap文件。如果需要在laravel中新增库，将新增的库所在目录写到composer.json的autol">
+<meta property="og:updated_time" content="2017-08-14T10:11:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="phpstorm+xdebug无法访问进入断点的坑">
-<meta name="twitter:description" content="WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。">
+<meta name="twitter:title" content="composer使用知识汇总">
+<meta name="twitter:description" content="composer的几个常用命令1、composer install 2、composer require 3、composer update 4、composer remove  5、composer dump-autoload 非常实用，每次执行该命令都会重新生成autoload_classmap文件。如果需要在laravel中新增库，将新增的库所在目录写到composer.json的autol">
 
 
 
@@ -128,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/06/my-new-Post/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/08/composer使用知识汇总/"/>
 
 
 
 
 
-  <title>phpstorm+xdebug无法访问进入断点的坑 | Hexo</title>
+  <title>composer使用知识汇总 | Hexo</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +282,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/my-new-Post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/08/composer使用知识汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -300,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">phpstorm+xdebug无法访问进入断点的坑</h1>
+          <h1 class="post-title" itemprop="name headline">composer使用知识汇总</h1>
         
 
         <div class="post-meta">
@@ -312,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T16:04:24+08:00">
-                2017-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-08T10:21:20+08:00">
+                2017-08-08
               </time>
             
 
@@ -347,19 +346,19 @@
       
 
       
-        <p>WiFi环境下xdebug.remote值不能配置为localhost，而应该配置成mac获取到的本地地址，这样才能进入断点。</p>
-<a id="more"></a>
-<pre><code>[xdebug]
-zend_extension=&quot;/usr/local/opt/php56-xdebug/xdebug.so&quot;
-xdebug.remote_autostart=1
-xdebug.remote_enable=1
-xdebug.remote_mode=&quot;req&quot;
-xdebug.remote_log=&quot;/var/log/xdebug.log&quot;
-xdebug.remote_host=192.168.3.27
-xdebug.remote_port=9001
-xdebug.remote_handler=&quot;dbgp&quot;
-xdebug.idekey=&quot;PHPSTORM&quot; 
-</code></pre>
+        <h1 id="composer的几个常用命令"><a href="#composer的几个常用命令" class="headerlink" title="composer的几个常用命令"></a>composer的几个常用命令</h1><p>1、composer install</p>
+<p>2、composer require</p>
+<p>3、composer update</p>
+<p>4、composer remove </p>
+<p>5、composer dump-autoload 非常实用，每次执行该命令都会重新生成autoload_classmap文件。如果需要在laravel中新增库，将新增的库所在目录写到composer.json的autoload的classmap字段即可。</p>
+<p>6、composer.lock lists all exact versions of each vendor package that is installed.</p>
+<p>7、If you run composer install and there is a lock file present, it will download the versions of composer.lock no matter what’s inside composer.json</p>
+<p>8、If you run composer install and there is no lock file, it will generate a lock file of all the vendor versions it has installed based on composer.json</p>
+<p>9、If you run composer update it will overwrite the composer.lock file with the newest available vendor packages based on composer.json<br>所以说，composer update本质上是更新composer.lock的过程，由composer.json覆写composer.lock的过程</p>
+<h1 id="What’s-the-difference-between-composer-dump-autoload-composer-update-and-composer-install"><a href="#What’s-the-difference-between-composer-dump-autoload-composer-update-and-composer-install" class="headerlink" title="What’s the difference between composer dump-autoload, composer update and composer install?"></a>What’s the difference between composer dump-autoload, composer update and composer install?</h1><p>1、composer install installs the vendor packages according to composer.lock (or creates composer.lock if not present),</p>
+<p>2、composer update always regenerates composer.lock and installs the lastest versions of available packages based on composer.json</p>
+<p>3、composer dump-autoload won’t download a thing. It just regenerates the list of all classes that need to be included in the project (autoload_classmap.php). Ideal for when you have a new class inside your project.</p>
+
       
     </div>
 
@@ -386,12 +385,6 @@ xdebug.idekey=&quot;PHPSTORM&quot;
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/xdebug/" rel="tag"># xdebug</a>
-          
-        </div>
-      
 
       
         
@@ -401,14 +394,18 @@ xdebug.idekey=&quot;PHPSTORM&quot;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/26/phpstorm常用快捷键记录/" rel="next" title="phpstorm常用快捷键记录">
+                <i class="fa fa-chevron-left"></i> phpstorm常用快捷键记录
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/07/tutorial/" rel="prev" title="laravel学习过程整理资料集合">
-                laravel学习过程整理资料集合 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/14/php中与回调函数有关的数组函数/" rel="prev" title="php中与回调函数有关的数组函数">
+                php中与回调函数有关的数组函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -456,8 +453,17 @@ xdebug.idekey=&quot;PHPSTORM&quot;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -510,6 +516,22 @@ xdebug.idekey=&quot;PHPSTORM&quot;
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#composer的几个常用命令"><span class="nav-number">1.</span> <span class="nav-text">composer的几个常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What’s-the-difference-between-composer-dump-autoload-composer-update-and-composer-install"><span class="nav-number">2.</span> <span class="nav-text">What’s the difference between composer dump-autoload, composer update and composer install?</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
